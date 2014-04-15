@@ -3,11 +3,11 @@ New Addons portal is out!
 
 The new "Addons portal":http://addons.nette.org/ has been deployed and the old addons have been migrated with the exception of some very old ones that have been dropped.
 
-New version brings new features:
+The new version brings new features, such as:
 - preferred way to publish an addon is as "Packagist":https://packagist.org/ package
 - dependencies are loaded from `composer.json`
-- description can by written in Texy! or Markdown
-- multiple categories and licences can be choosed
+- description can be written in Texy! or Markdown
+- multiple categories and licenses can be chosen
 
 There is an option to upload an addon package manually, which suits mostly for client-side addons.
 
