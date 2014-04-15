@@ -1,0 +1,1 @@
+Repository for spell checkers and correctors.
