@@ -1,7 +1,7 @@
 New Addons portal is out!
 =========================
 
-We deployed new "Addons portal":http://addons.nette.org/. Old addons have been migrated but some very old has been dropped.
+The new "Addons portal":http://addons.nette.org/ has been deployed and the old addons have been migrated with the exception of some very old ones that have been dropped.
 
 New version brings new features:
 - preferred way to publish an addon is as "Packagist":https://packagist.org/ package
@@ -9,8 +9,8 @@ New version brings new features:
 - description can by written in Texy! or Markdown
 - multiple categories and licences can be choosed
 
-There is an option to upload an addon package manually. It suits for client-side addons mostly.
+There is an option to upload an addon package manually, which suits mostly for client-side addons.
 
-To help disseminate Nette abroad, the only supported language of addons description is English. Well, there are still few addons by Czech so please, authors, update them.
+To help disseminate Nette abroad, the only supported language of addons description is English. Well, there are still few addons in Czech so please, authors, update them.
 
-Whole portal is "published":https://github.com/nette/web-addons.nette.org/ as opensource. It is a quite grown application written in Nette Framework. You can inspire self by it and "report  bug":https://github.com/nette/web-addons.nette.org/issues/new if you hit some.
+The whole portal is "published":https://github.com/nette/web-addons.nette.org/ as open-source. It is a quite grown application written in Nette Framework. You can inspire yourself by it and "report bug":https://github.com/nette/web-addons.nette.org/issues/new if you hit some.
