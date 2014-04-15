@@ -1,16 +1,16 @@
 New Addons portal is out!
 =========================
 
-The new "Addons portal":http://addons.nette.org/ has been deployed and the old addons have been migrated with the exception of some very old ones that have been dropped.
+The new "Addon Portal":http://addons.nette.org/ has been deployed. Most of the old addons have been migrated there, except for the oldest ones.
 
-The new version brings new features, such as:
-- preferred way to publish an addon is as "Packagist":https://packagist.org/ package
+This new version brings multiple features, such as:
+- it's preferred to publish addons as a "Packagist":https://packagist.org/ package
 - dependencies are loaded from `composer.json`
-- description can be written in Texy! or Markdown
-- multiple categories and licenses can be chosen
+- description can be written either in Texy!, or in Markdown
+- multiple categories and licenses can be chosen for your addons
 
-There is an option to upload an addon package manually, which suits mostly for client-side addons.
+It is possible to upload an addon package manually. This feature is mostly suitable for client-side addons.
 
-To help disseminate Nette abroad, the only supported language of addons description is English. Well, there are still few addons in Czech so please, authors, update them.
+To help disseminate the Nette Framework around the world, the only supported language of addon description on the website is English. There are still some addons in Czech language, authors should update them as soon as possible.
 
-The whole portal is "published":https://github.com/nette/web-addons.nette.org/ as open-source. It is a quite grown application written in Nette Framework. You can inspire yourself by it and "report bug":https://github.com/nette/web-addons.nette.org/issues/new if you hit some.
+The whole portal has been "released":https://github.com/nette/web-addons.nette.org/ as an open-source. It is quite a grown application, written in Nette Framework. Feel free to get inspired by it and "report a bug":https://github.com/nette/web-addons.nette.org/issues/new if you'll happen to stumble upon one.
