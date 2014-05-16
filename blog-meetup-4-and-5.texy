@@ -13,7 +13,7 @@ It was working night rather than meeting. We were:
 - discussing the pull request for "Request restore refactoring":https://github.com/nette/application/pull/4
 
 
-The fifth meetup was held on mid-May((14.5.2014)).
+The fifth meetup was held on "mid-May"((14.5.2014)).
 ------
 
 The first topic was the "New default directory structure":http://forum.nette.org/en/1397-new-default-directory-structure RFC. Discussion was long as usual with these everybody-affecting things. We agreed that old behavior is quite outdated but we couldn’t agree about the new one. So we laid out few basic requirements:
