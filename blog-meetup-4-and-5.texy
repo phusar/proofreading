@@ -1,27 +1,38 @@
 Nette Foundation Meetup 4 & 5
 =============================
 
-The fourth meetup held in April((10.4.2014)). It was working night rather than meeting. We were:
+The fourth meetup was held in April((10.4.2014))
+------
+
+
+It was working night rather than meeting. We were:
+
 - preparing a VPS((Virtual Private Server))
-- fixing bugs for "Addons Portal":http://addons.nette.org
-- cleaning up a database with addons
+- fixing bugs on "Addons Portal":http://addons.nette.org
+- cleaning up the database with addons
 - discussing the pull request for "Request restore refactoring": https://github.com/nette/application/pull/4
 
 
-The fifth meetup held on second May Wednesday((14.5.2014)).
+The fifth meetup was held on second May Wednesday((14.5.2014)).
+------
 
-The first topic was a "New default directory structure": http://forum.nette.org/en/1397-new-default-directory-structure RFC. Discussion was long as usual with these everybody-affecting things. We agreed that old behavior is quite outdated but we couldn’t agree about the new one. So we laid out few basic requirements:
+The first topic was the "New default directory structure": http://forum.nette.org/en/1397-new-default-directory-structure RFC. Discussion was long as usual with these everybody-affecting things. We agreed that old behavior is quite outdated but we couldn’t agree about the new one. So we laid out few basic requirements:
+
 - comfortable for small and big projects, with or without modules
 - don’t mix up common folders and specific implementation files
 - template layout is optional
 
 and presumptions:
+
 - ideal application state is one or two actions per presenter
-- new Latte API will cache template file paths, template look up efficiency is not so important
+- new Latte API will cache template file paths, template lookup efficiency is therefore not so important
 
 Taking these into account we are preparing an implementation. It will pay attention, among the other things, to presenters inheritance.
+
 Second big topic was the nette.org website. New standalone projects become with the "divided Nette framework":http://forum.nette.org/en/1518-nette-framework-2-2-0-released, the website is not only about framework now.
 
 At least the "Tester":http://tester.nette.org, Latte, Tracy and Database deserve a full-featured web presentation which current nette.org webpage cannot satisfy. Work is in progress.
 
-We discussed few next tiny issues and one bigger on the end. "IProvider":http://forum.nette.org/en/1193-extending-extensions-solid-modular-concept is the modular concept. In a short, it moves some user’s extension responsibilities into the framework. It starts to be more interesting with mature DI((Dependency Injection)) implementation as Nette DI had become. Things are moving, stay tuned if you are interested in.
+We discussed few next tiny issues and one bigger on the end. "IProvider":http://forum.nette.org/en/1193-extending-extensions-solid-modular-concept is a modular concept. In a short, it moves some user’s extension responsibilities into the framework. It starts to be more interesting with mature DI((Dependency Injection)) implementation as Nette DI had become.
+
+Things are moving, stay tuned.
