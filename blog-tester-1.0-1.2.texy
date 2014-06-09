@@ -10,7 +10,7 @@ use Tester\Assert;
 
 class MyTest extends Tester\TestCase
 {
-	public function testSomethig()
+	public function testSomething()
 	{
 		Assert::fail('I have no reason to be a success.');
 	}
@@ -18,13 +18,13 @@ class MyTest extends Tester\TestCase
 \--
 One would expect the test to fail, but unfortunately, the test would succeed in Tester version 1.0. It happens because `(new MyTest)->run()` is missing. Since the version 1.1.0, Tester checks for the number of executed assertions, and reports a failure, if there are none. If you don't like this behaviour, you can disable it via `Tester\Environment::$checkAssertions = FALSE`.
 
-Other changes are focused on the `Tester\Assert` class. `Assert::isEqual()` now supports comparing of recursive structures. New assertion `Assert::isNan()` has been added, because it is hard to use PHP's `NAN`. If you want to test the `NAN` value, you should definitely use this assertion. The last one is a new `Assert:count()` method. It may not look very useful, because `Assert::same( 1, count($var) )` should be the same, shouldn't it? No, because the count() assertion checks that $var is an array, or that it implements the `Countable` interface. It prevents mistakes such as `count("")`.
+Other changes are focused on the `Tester\Assert` class. `Assert::isEqual()` now supports comparing of recursive structures. New assertion `Assert::isNan()` has been added, because it is hard to compare PHP's `NAN`. If you want to test the `NAN` value, you should definitely use this assertion. The last one is a new `Assert:count()` method. It may not look very useful, because `Assert::same( 1, count($var) )` should be the same, shouldn't it? No, because the count() assertion checks that $var is an array, or that it implements the `Countable` interface. It prevents mistakes such as `count("")`.
 
-Option `-log` has been renamed to `-l` (or `--log`). The only reason for this is to keep consistency across the options. The old name still works without warning, but it may be removed in future version. Please, update your scripts.
+Option `-log` has been renamed to `-l` (or `--log`). The only reason for this is to keep consistency across the options. The old name still works without warning, but it may be removed in a future version. Please, update your scripts.
 
 A new option `--stop-on-fail` has been added. It stops the execution after the first test failure. It brings some new possibilities for your workflow. Try to combine it with `--watch`.
 
-A completely new `Tester\FileMock` class has been introduced. It emulates real files in memory, so you can easily test code which contains functions like `fopen()`, `file_get_contentst()` or `parse_ini_file()`. You can find an example in the "documentation":http://tester.nette.org/#toc-stop-on-fail.
+A completely new `Tester\FileMock` class has been introduced. It emulates real files in memory, so you can easily test code which contains functions like `fopen()`, `file_get_contentst()` or `parse_ini_file()`. You can find an example in the "documentation":http://tester.nette.org/#toc-filemock.
 
 The `Tester\DomQuery` class now supports HTML5 tags properly. You would get PHP warnings before, even if you would have loaded a valid HTML5 document. The only possible workarounds were either to use a shut-up operator `@`, or manually handle LibXML errors. You are now shielded from this odd PHP behaviour.
 
@@ -50,7 +50,7 @@ public function testApi($method, $paylod = NULL)
 \--
 ...moreover you don't have to worry about the named arguments' order. They will be bound by their names.
 
-The last, and most significant change is the possibility to combine the `@dataProvider`, `@testCase` and `@multiple` together in one test. It brings up crazy combinations such as: run every test case method for every data provider entry, and run it 20 times.
+The last significant change is the possibility to combine the `@dataProvider`, `@testCase` and `@multiple` together in one test. It brings up crazy combinations such as: run every test case method for every data provider entry, and run it 20 times.
 
 That's all for now. You can find other details in the "documentation":http://tester.nette.org/, which is up to date.
 
