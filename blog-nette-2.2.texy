@@ -2,7 +2,7 @@ Nette 2.2: Revolution without Side-Effects
 ##########################################
 
 .[perex]
-About a month ago, one of the most revolutionary versions of Nette Framework was released. This new version brings a huge change in the structure of framework -- the "main repository":https://github.com/nette/nette has been split into several standalone components.
+About a month ago, one of the most revolutionary versions of Nette Framework was released. This new version brings a huge change in structure of the framework -- the "main repository":https://github.com/nette/nette has been split into several standalone components.
 
 The main repository has been physically split into following repositories:
 "Application":[https://github.com/nette/application],
@@ -26,7 +26,7 @@ The main repository has been physically split into following repositories:
 "Tracy":[https://github.com/nette/tracy] and
 "Utils":[https://github.com/nette/utils]. Each repository represents one component and has its own history, releases, issues, pull-requests, and, of course, `composer.json`.
 
-Some of the components also contains the `src/Bridges` directory, which provides integration with other parts of the framework. You do not need to install the referenced parts of the framework, use of the integration bridges is optional. All required dependencies are specified in the `composer.json` file.
+Some of the components also contain the `src/Bridges` directory, which provides integration with other parts of the framework. You do not need to install the referenced parts of the framework, use of the integration bridges is optional. All required dependencies are specified in the `composer.json` file.
 
 Although the code repository has been dramatically split into several stand-alone components, there is no need to worry - you can still "download the distribution package":http://nette.org/download or install the whole framework by including `nette/nette` in your `composer.json`.
 
@@ -37,25 +37,25 @@ Nette 2.2 also brings several changes in API and new features.
 Latte
 =====
 
-Latte was integral part of the framework for a long time and it was integrated with the rest of the framework (mainly with the `Nette\Templating` namespace). In the new release, the Latte API was completely rewritten with stand-alone usage in mind:
+Latte was an integral part of the framework for a long time, and it was integrated with the rest of the framework (mainly with the `Nette\Templating` namespace). In the new release, the Latte API was completely rewritten with stand-alone usage in mind:
 
 /---php
 $latte = new Latte\Engine; // not the Nette\Latte\Engine
 $latte->setTempDirectory('/path/to/cache');
 
 $latte->addFilter('money', function($val) { return ...; });
-// addFilter() replaced registerHelper() from previus releases
+// addFilter() replaced registerHelper() from previous releases
 
 $latte->onCompile[] = function($latte) {
     $latte->addMacro(...);
-    // if you want add some own macros, see http://goo.gl/d5A1u2
+    // if you want add your own macros, see http://goo.gl/d5A1u2
 };
 
 $latte->render('template.latte', $parameters);
 // or $html = $latte->renderToString('template.latte', $parameters);
 \---
 
-Latte now handles template loading and caching. The original `FileTemplate` and the `Nette\Templating` namespace has been deprecated.
+Latte now handles template loading and caching. The original `FileTemplate` and the `Nette\Templating` namespaces have been deprecated.
 
 In addition, `Nette\Application` provides its own `Template`:[http://api.nette.org/2.2.1/Nette.Bridges.ApplicationLatte.Template.html] class, which replaces `FileTemplate`, and `TemplateFactory`, which creates and initializes the templates for use in presenters and controls.
 
@@ -69,13 +69,13 @@ Prefix of the CSS classes in the debugger panel was changed from `nette-` to `to
 Other Changes
 =============
 
-Clases `ArrayHash`, `ArrayList`, `DateTime`, `Image` and `ObjectMixin` are now part of the `Utils` package and they were moved from `Nette` to the `Nette\Utils` namespace. `NetteLoader` automatically creates aliases for these classes in run-time (i.e. during the autoloading) and prints a warning each time you use a class by its old name.
+Classes `ArrayHash`, `ArrayList`, `DateTime`, `Image` and `ObjectMixin` are now part of the `Utils` package and they were moved from `Nette` to the `Nette\Utils` namespace. `NetteLoader` automatically creates aliases for these classes in run-time (i.e. during the auto loading), and prints a warning each time you class by its old name.
 
 `Nette\Utils\MimeTypeDetector` class was deprecated, the "Fileinfo":[http://php.net/manual/en/book.fileinfo.php] should be used directly since PHP 5.3.
 
 Support for `@serializationVersion` attribute and custom annotation classes lookup was dropped, since it was not used and only decreased the application performance.
 
-When an error during the link creation occurs, the returned path starts with `#error:` instead of `error`, to prevent browser errors. If you are using CSS to highlight incorrect links, please update your "CSS styles for invalid links":[https://github.com/nette/sandbox/commit/ac7a0fd2d707160426ab184442b8d68c590f8de2#diff-2].
+When an error during link creation occurs, the returned path starts with `#error:` instead of `error`, to prevent browser errors. If you are using CSS to highlight incorrect links, please update your "CSS styles for invalid links":[https://github.com/nette/sandbox/commit/ac7a0fd2d707160426ab184442b8d68c590f8de2#diff-2].
 
 New Features
 ============
@@ -84,11 +84,11 @@ The `do` parameter for forms is now transferred in the `POST` data to keep the U
 
 `data-` attributes in `Nette\Utils\Html` now accepts arrays. They will be automatically encoded to JSON.
 
-New function `fetchAssoc()` was added to the Nette\Database. The usage example can be found in "test suite for ResultSet.fetchAssoc()":[https://github.com/nette/database/blob/master/tests/Database/ResultSet.fetchAssoc().phpt].
+New function `fetchAssoc()` was added to the `Nette\Database`. The usage example can be found in "test suite for ResultSet.fetchAssoc()":[https://github.com/nette/database/blob/master/tests/Database/ResultSet.fetchAssoc().phpt].
 
-`@inject` annotations now respects aliases defined by `use` statements. This means you are no longer required to write fully qualified names when injecting dependencies.
+`@inject` annotations now respect aliases defined by `use` statements. This means you are no longer required to write fully qualified names when injecting dependencies.
 
-Class `Nette\Security\Passwords`:[http://api.nette.org/2.2.0/Nette.Security.Passwords.html] with static methods for password hashing and verification was introduced. This class uses bcrypt algorithm and requires PHP 5.3.7 or higher. The bcrypt algorithm is more secure than traditionally used MD5 and SHA-* hashing, so we recommend using these functions instead. Semantics of these functions are compatible with the "Password Hashing extension":[http://www.php.net/manual/en/book.password.php] from PHP 5.5. 
+Class `Nette\Security\Passwords`:[http://api.nette.org/2.2.0/Nette.Security.Passwords.html] with static methods for password hashing and verification was introduced. This class uses bcrypt algorithm and requires PHP 5.3.7 or higher. The bcrypt algorithm is more secure than traditionally used MD5 and SHA-* hashing, so we recommend using bcrypt functions instead. Semantics of these functions are compatible with the "Password Hashing extension":[http://www.php.net/manual/en/book.password.php] from PHP 5.5.
 
 Last, but not least, when defining users in the `config.neon` file, you can specify role for each user:
 
